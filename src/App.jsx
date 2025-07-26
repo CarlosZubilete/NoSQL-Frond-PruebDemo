@@ -2,6 +2,8 @@ import './App.css'
 import { Outlet } from 'react-router'
 import Header from './feature/main/components/Header'
 import Footer from './feature/main/components/Footer'
+import ProductListProvider from './feature/products/contexts/ProductListProvider'
+
 
 function App() {
 
@@ -10,7 +12,9 @@ function App() {
     <div className='App'>
       <Header />
       <main className="flex-grow-1">
-        <Outlet />
+        <ProductListProvider>
+          <Outlet />
+        </ProductListProvider>
       </main>
       <Footer />
     </div>

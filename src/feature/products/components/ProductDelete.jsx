@@ -4,9 +4,7 @@ import ProductCard from './ProductCard';
 import useProductDelete from '../hooks/useProductDelete';
 
 function ProductDelete(){
-
   const {id} = useParams(); 
-
   const{product,error,isSending,handleSubmitForm} = useProductDelete(id);
 
   if(error) return <p className="container mt-5 pt-4">Error... </p>;
@@ -32,7 +30,7 @@ function ProductDelete(){
       className={`text-light text-decoration-none ${isSending ? 'disabled-link' : ''}`}
       onClick={(e)=>{ if(isSending) e.preventDefault() }}
     >
-      <Button  color="secondary" className="mt-3" disabled={isSending}>
+      <Button  color="secondary" className="mt-3" disabled={isSending} >
         Back
       </Button>
     </Link>

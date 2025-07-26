@@ -1,9 +1,10 @@
 import axios from "axios"
+import connection from '../../../config/connection.js'
 
 const productService = {
 
   findAll: async () => {
-    return axios.get('http://localhost:3000/products')
+    return axios.get(`${connection}/products`)
       .then((response)=>{
         return response.data;
       })
@@ -13,7 +14,7 @@ const productService = {
   },
   
   create: async (values) => {
-    return axios.post('http://localhost:3000/products',JSON.stringify(values), {
+    return axios.post(`${connection}/products`,JSON.stringify(values), {
       headers: {
           'Content-Type': 'application/json'
         }
@@ -21,7 +22,7 @@ const productService = {
   },
  
   findById: async(id) => {
-    return axios.get(`http://localhost:3000/products/${id}`)
+    return axios.get(`${connection}/products/${id}`)
     .then((response) =>{
       return response.data;
     })
@@ -31,7 +32,7 @@ const productService = {
   },
   
   editByID: async (id,values) => {
-    return axios.patch(`http://localhost:3000/products/${id}`,JSON.stringify(values),{
+    return axios.patch(`${connection}/products/${id}`,JSON.stringify(values),{
       headers: {
         'Content-Type': 'application/json'
       }
@@ -39,7 +40,7 @@ const productService = {
   },
   
   deleteByID: async (id) => {
-    return axios.delete(`http://localhost:3000/products/${id}`,{
+    return axios.delete(`${connection}/products/${id}`,{
       headers: {
         'Content-Type': 'application/json'
       }

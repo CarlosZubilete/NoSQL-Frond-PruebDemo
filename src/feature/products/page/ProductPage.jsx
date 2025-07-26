@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useProductList from '../hooks/useProductList';
 import ProductList from '../components/ProductList';
+// import useProductListContext from '../contexts/useProductListContext';
 
 const Loading = () => (
   <div className="container text-center mt-5 pt-4">
@@ -12,7 +13,10 @@ const Loading = () => (
 
 function PageProduct () {
   const[listAll, setListAll] = useState([]);
-  const { products , loading  } = useProductList();
+
+  const { products , loading  , total } = useProductList();
+  // const { needsRefresh, triggerRefresh } = useProductListContext();
+  // const { needsRefresh } = useProductListContext();
 
   useEffect(()=>{
     setListAll(products);
@@ -28,7 +32,7 @@ function PageProduct () {
 
   return(
       <div className="container mt-5 pt-4">
-        <h2 className="">Products List</h2>
+        <h2 className="">Products | TOTAL = <strong>{total}</strong>  </h2>
         <Link to="/new-product" className="text-light text-decoration-none">    
           <button type="button" className="btn btn-success mb-3">
             Add Product

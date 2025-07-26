@@ -10,8 +10,8 @@ const BadRequest = () => (
   </div>
 );
 
-
 function ProductList({ list = [] }) {
+
   return(
     <Container className="mt-4">
       {(list.length === 0) && <BadRequest />}

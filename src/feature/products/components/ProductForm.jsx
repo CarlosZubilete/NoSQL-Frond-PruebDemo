@@ -5,6 +5,7 @@ import { Formik, Form , Field , ErrorMessage} from 'formik';
 import SchemaProduct  from '../schemas/ProductSchema';
 import useNewProduct from '../hooks/useNewProduct';
 
+
 // The component when use into the FORMIK
 const ErrorOne = ({children}) => {
   return <span style={{fontSize:'.6rem', color:'red' , fontWeight:'bold'}} 
@@ -21,7 +22,6 @@ const ErrorBack = () => (
     </h2>
   </div>
 );
-
 const Loading = () => (
   <div className="container text-center mt-5 pt-4">
     <div className="spinner-border text-primary" role="status"></div>
@@ -33,14 +33,12 @@ const Loading = () => (
 function ProductForm () {
   
   const params = useParams();
-
   const { handleSubmitForm, success , product, error} = useNewProduct(params.id);
-
   // If everything is ok..
   const redirect = useNavigate();
 
   useEffect(()=>{
-    if(success){
+    if(success){ 
       redirect('/ProductPage');
     }
   },[success,redirect])
