@@ -5,11 +5,12 @@ import App from './App.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // *HOME*
 import Home from './feature/main/components/Home.jsx'
-// *PRODUCTS*
-import ProductPage from './feature/products/page/ProductPage';
-import ProductForm from './feature/products/components/ProductForm.jsx';
-import ProductDelete from './feature/products/components/ProductDelete';
-import ProductPagination from './feature/products/page/ProductPagination.jsx';
+// *PRODUCTS-CRUD*
+import ProductPage from './feature/products-crud/page/ProductPage';
+import ProductForm from './feature/products-crud/components/ProductForm.jsx';
+import ProductDelete from './feature/products-crud/components/ProductDelete';
+// *PRODUCTS-PAGINATION*
+import ProductPagination from './feature/products-pagination/page/ProductPagination.jsx'
 
 const router = createBrowserRouter([
   {
@@ -39,7 +40,6 @@ const router = createBrowserRouter([
         {
           path: '/Pagination',
           Component: ProductPagination,
-          // element: <h1 className='container mt-5 pt-4'>Pagination</h1> 
         }
       ]
   }

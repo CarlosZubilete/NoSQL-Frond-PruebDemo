@@ -4,7 +4,7 @@ import connection from '../../../config/connection.js'
 const productService = {
 
   findAll: async (query) => {
-    const querStr = query?.page ? `page=${query.page}&limit=6` : '';
+    const querStr = query?.page ? `page=${query.page}` : '';
     return axios.get(`${connection}/products?${querStr}`)
       .then((response)=>{
         return response.data;
@@ -19,7 +19,7 @@ const productService = {
       headers: {
           'Content-Type': 'application/json'
         }
-        }) 
+      }) 
   },
  
   findById: async(id) => {
