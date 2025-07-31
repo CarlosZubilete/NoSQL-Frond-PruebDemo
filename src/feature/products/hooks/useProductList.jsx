@@ -23,12 +23,14 @@ function useProductList(){
 
     productService.findAll()
       .then((responseData) => {
-        cacheProducList.products = responseData.result.data; // guardar en cache
-        cacheProducList.count = responseData.result.total; 
+        // cacheProducList.products = responseData.result.data; // save at cache
+        // cacheProducList.count = responseData.result.total; 
+        cacheProducList.products = responseData.data; // save at cache
+        cacheProducList.count = responseData.total; 
         console.log('Recet memoryCache');
 
-        setProducts(responseData.result.data || []);
-        setTotal(responseData.result.total || 0);    
+        setProducts(responseData.data || []);
+        setTotal(responseData.total || 0);    
       })
       .catch(() =>setError(true))
       .finally(() => setLoading(false));   

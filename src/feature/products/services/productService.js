@@ -3,8 +3,9 @@ import connection from '../../../config/connection.js'
 
 const productService = {
 
-  findAll: async () => {
-    return axios.get(`${connection}/products`)
+  findAll: async (query) => {
+    const querStr = query?.page ? `page=${query.page}&limit=6` : '';
+    return axios.get(`${connection}/products?${querStr}`)
       .then((response)=>{
         return response.data;
       })

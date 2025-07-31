@@ -9,6 +9,7 @@ import Home from './feature/main/components/Home.jsx'
 import ProductPage from './feature/products/page/ProductPage';
 import ProductForm from './feature/products/components/ProductForm.jsx';
 import ProductDelete from './feature/products/components/ProductDelete';
+import ProductPagination from './feature/products/page/ProductPagination.jsx';
 
 const router = createBrowserRouter([
   {
@@ -32,8 +33,13 @@ const router = createBrowserRouter([
           Component: ProductForm, 
         },
         {
-          path: '/product/:id/delete',
+          path:'/product/:id/delete',
           Component: ProductDelete,
+        },
+        {
+          path: '/Pagination',
+          Component: ProductPagination,
+          // element: <h1 className='container mt-5 pt-4'>Pagination</h1> 
         }
       ]
   }

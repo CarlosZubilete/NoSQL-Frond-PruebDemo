@@ -23,7 +23,12 @@ function Header() {
             </NavItem>
             <NavItem>
               <NavLink tag={Link} to="/ProductPage" className="text-light text-decoration-none">
-                Products
+                CRUD
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink tag={Link} to="/Pagination" className="text-light text-decoration-none">
+                Pagination
               </NavLink>
             </NavItem>
           </Nav>
