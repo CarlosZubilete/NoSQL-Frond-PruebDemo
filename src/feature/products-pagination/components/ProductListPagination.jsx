@@ -1,5 +1,4 @@
-import { Link } from 'react-router';
-import { Button, Container, Row, Col } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 import ProductCardPagination from './ProductCardPagination';
 
 const BadRequest = () => (

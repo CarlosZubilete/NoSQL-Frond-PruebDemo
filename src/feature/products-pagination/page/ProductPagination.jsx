@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Container, Pagination, PaginationItem, PaginationLink } from "reactstrap";
+import { Container, Pagination, PaginationItem, PaginationLink,Col } from "reactstrap";
 import useProductPagination from '../hooks/useProductPagination';
 import ProductListPaginaion from '../components/ProductListPagination';
+import ShoppingCart from "../../cart/components/ShoppingCart";
 
 function ProductPagination(){
 
@@ -16,8 +17,12 @@ function ProductPagination(){
 
   console.log('ProductPaginmation-> totalPage = ', totalPage);
   return (
-     <Container className="container mt-5 pt-4">
-      <h2 className="text-center"><strong>Pagination</strong></h2>
+     <Container className="container mt-5 pt-4 ">
+      <Col className="d-flex justify-content-start">
+        <h3>Lista de Compras</h3>
+        <ShoppingCart />
+      </Col>
+
       <hr />
       
       <ProductListPaginaion list={products} />
@@ -49,3 +54,6 @@ function ProductPagination(){
 )};
 
 export default ProductPagination;
+
+// TODO -> 1. To implement storage sesion becasue save the data and make the pagination. 
+// TODO -> 2. and structurate the files to inprove the organization.
